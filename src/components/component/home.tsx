@@ -11,7 +11,6 @@ export default function HomePage() {
         <video
           className="w-full h-full object-cover"
           autoPlay
-          muted
           loop
         >
           <source src="https://biz4-chatbot-bucket.s3.eu-north-1.amazonaws.com/drone+01.mp4" type="video/mp4" />
