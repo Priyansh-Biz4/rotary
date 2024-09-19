@@ -32,7 +32,7 @@ export default function IntroModel() {
             </button>
             <div className="flex flex-col items-center justify-center gap-6">
               <Image
-                src="/image2.jpg"
+                src="/card.jpeg"
                 width={500}
                 height={500}
                 alt="Modal Image"
@@ -40,9 +40,13 @@ export default function IntroModel() {
                 style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
               />
               <div className="space-y-2 text-center">
-                <h3 className="text-2xl font-bold">Welcome to our website!</h3>
+                <h6 className="text-2xl font-bold">
+🎟️✨ Get Ready for the Ultimate Garba Bash! 💃🕺
+               </h6>
                 <p className="text-muted-foreground">
-                  We&lsquo;re excited to have you here. Take a look around and let us know if you have any questions.
+                  Grab your pass to the ultimate Garba night! Contact Lalit
+                  Jadav at +91 98798 75831 to secure yours before they’re gone!
+                  💃🔥{" "}
                 </p>
               </div>
             </div>
