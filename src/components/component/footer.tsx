@@ -75,11 +75,11 @@ const Footer = () =>
                 <div className="grid gap-2">
                     <div className="flex items-center gap-2">
                         <PhoneIcon className="h-5 w-5 text-muted-foreground" />
-                        <span>+1 (123) 456-7890</span>
+                        <span>+91 98798 75831</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <MailIcon className="h-5 w-5 text-muted-foreground" />
-                        <span>info@garbasponsor.com</span>
+                        <span>info@zanzarrotary.com</span>
                     </div>
                     <div className="flex items-center gap-2">
                         <LocateIcon className="h-5 w-5 text-muted-foreground" />

@@ -32,9 +32,9 @@ export default function IntroModel() {
             </button>
             <div className="flex flex-col items-center justify-center gap-6">
               <Image
-                src="/placeholder.svg"
-                width={300}
-                height={200}
+                src="/image2.jpg"
+                width={500}
+                height={500}
                 alt="Modal Image"
                 className="rounded-lg animate-scale-up"
                 style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
