@@ -44,8 +44,7 @@ export default function IntroModel() {
 🎟️✨ Get Ready for the Ultimate Garba Bash! 💃🕺
                </h6>
                 <p className="text-muted-foreground">
-                  Grab your pass to the ultimate Garba night! Contact Lalit
-                  Jadav at +91 98798 75831 to secure yours before they’re gone!
+                  Grab your pass to the ultimate Garba night! Contact at +91 98798 75831 to secure yours before they’re gone!
                   💃🔥{" "}
                 </p>
               </div>
