@@ -1,78 +1,137 @@
-import Image from 'next/image';
-import { CarouselComp } from './carousel';
-import IntroModel from './intro-model';
+'use client'
 
-export default function HomePage() {
-  const images = ['s9','img1', 'img3', 'img4'];
+import Image from 'next/image';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+ const images = [
+    'home',
+    'home2',
+    'home3',
+    'img4',
+  ];
+const CarouselComp = () => {
+ 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <div className="relative flex flex-col min-h-screen overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden">
+    <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden">
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={currentIndex}
+                            src={"/" + images[currentIndex] + ".jpeg"}
+
+          alt={`Garba Event ${currentIndex + 1}`}
+          className="absolute inset-0 w-full h-full object-cover"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        />
+      </AnimatePresence>
+    </div>
+  );
+};
+
+const IntroModel = () => {
+  return (
+    <div className="p-6 text-center bg-white bg-opacity-90 rounded-lg shadow-lg">
+      <h2 className="text-3xl font-bold mb-4 text-orange-600 font-serif">Welcome to Rotary Club of Palanpur</h2>
+      <p className="text-pink-700 text-lg">
+        Serving our community and celebrating our culture through Garba. Join us in our mission to create lasting change and preserve our traditions.
+      </p>
+    </div>
+  );
+};
+
+const DecorativeBorder = () => (
+  <div className="absolute inset-0 pointer-events-none">
+    <div className="h-4 bg-[url('/border-pattern.png')] bg-repeat-x"></div>
+    <div className="w-4 bg-[url('/border-pattern-vertical.png')] bg-repeat-y absolute top-0 bottom-0 left-0"></div>
+    <div className="w-4 bg-[url('/border-pattern-vertical.png')] bg-repeat-y absolute top-0 bottom-0 right-0"></div>
+    <div className="h-4 bg-[url('/border-pattern.png')] bg-repeat-x absolute bottom-0 left-0 right-0"></div>
+  </div>
+);
+
+export default function HomePage() {
+  const events = ['Garba Night', 'Dandiya Raas', 'Cultural Program', 'Charity Auction'];
+
+  return (
+    <div className="relative flex flex-col min-h-screen overflow-hidden bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100">
+      <DecorativeBorder />
+      <div className="absolute inset-0 overflow-hidden -z-10">
         <video
-          className="w-full h-full object-cover"
-          autoPlay
+        autoPlay
+          className="w-full h-full object-cover opacity-20"
           loop
+          muted
         >
           <source src="https://biz4-chatbot-bucket.s3.eu-north-1.amazonaws.com/drone+01.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="absolute inset-0 bg-black opacity-50"></div> {/* Optional overlay */}
       </div>
 
-      <main className="relative flex-1 z-10">
-        <div className="bg-background rounded-lg shadow-lg max-w-md w-full relative animate-scale-up">
+      <main className="relative flex-1 z-10 container mx-auto px-4 py-8">
+        <div className="max-w-4xl mx-auto mt-12 mb-16">
           <IntroModel />
         </div>
-        <section className="w-full bg-muted">
+        
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-8 text-purple-700 font-serif">Upcoming Garba Events</h2>
           <CarouselComp />
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6">
-            <div className="space-y-4">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Celebrate the Vibrant Garba Culture</h2>
+        <section className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-orange-600 font-serif">Celebrate the Spirit of Rotary and Garba</h2>
+              <p className="text-pink-700 text-lg">
+                Join us in our mission to provide service to others, promote integrity, and advance world understanding, goodwill, and peace through our fellowship of business, professional, and community leaders - all while celebrating our rich cultural heritage through Garba.
+              </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {images.map((altText) => (
+              {events.map((event) => (
+                <div key={event} className="bg-white bg-opacity-75 p-4 rounded-lg shadow-md text-center">
+                  <h3 className="text-xl font-semibold text-purple-600 mb-2">{event}</h3>
+                  <p className="text-pink-600">Join us for an unforgettable night of dance and celebration!</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="space-y-6">
+              <div className="inline-block rounded-full bg-orange-500 px-3 py-1 text-sm text-white font-semibold">
+                Our Sponsers
+              </div>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-purple-700 font-serif">Making a Difference Through Garba</h2>
+              <p className="text-pink-700 text-lg">
+                The Rotary Club of Palanpur is committed to various community service projects. We combine our love for Garba with our dedication to social causes, creating events that not only celebrate our culture but also contribute to the betterment of our community.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {images.map((event) => (
                 <Image
-                  src={"/" + altText + ".jpeg"}
+                  key={event}
+                  src={"/" + event + ".jpeg"}
                   width={400}
-                  height={100}
-                  alt={altText}
-                  className="rounded-lg object-cover"
-                  key={altText}
+                  height={300}
+                  alt={event}
+                  className="rounded-lg object-cover shadow-lg"
                 />
               ))}
             </div>
           </div>
         </section>
-        {/* <section className="w-full py-12 md:py-24 lg:py-32">
-          <div className="container grid grid-cols-1 md:grid-cols-2 gap-8 px-4 md:px-6">
-            <div className="space-y-4">
-              <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
-                Sponsorship Tiers
-              </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Explore the Sponsorship Opportunities</h2>
-              <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                The Garba Sponsorship Program offers various tiers to suit your needs and budget. From Bronze to
-                Platinum, each level provides unique benefits and opportunities to showcase your brand and support the
-                vibrant Garba community.
-              </p>
-            </div>
-            <div className="grid grid-cols-2 gap-4">
-              {images.map((altText) => (
-                <Image
-                  src={"/" + altText + ".jpeg"}
-                  width={400}
-                  height={300}
-                  alt={altText}
-                  className="rounded-lg object-cover"
-                  key={altText}
-                />
-              ))}
-            </div>
-          </div>
-        </section> */}
       </main>
     </div>
   );
