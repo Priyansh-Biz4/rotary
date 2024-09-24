@@ -71,7 +71,7 @@ export default function HomePage() {
         autoPlay
           className="w-full h-full object-cover opacity-20"
           loop
-          muted
+          preload="auto"
         >
           <source src="https://biz4-chatbot-bucket.s3.eu-north-1.amazonaws.com/drone+01.mp4" type="video/mp4" />
           Your browser does not support the video tag.
