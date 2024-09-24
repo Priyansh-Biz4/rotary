@@ -67,13 +67,13 @@ export default function HomePage() {
     <div className="relative flex flex-col min-h-screen overflow-hidden bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100">
       <DecorativeBorder />
       <div className="absolute inset-0 overflow-hidden -z-10">
-        <video
-        autoPlay
+        <video        
+          autoPlay
+          muted
           className="w-full h-full object-cover opacity-20"
           loop
-          preload="auto"
         >
-          <source src="https://biz4-chatbot-bucket.s3.eu-north-1.amazonaws.com/drone+01.mp4" type="video/mp4" />
+          <source src="https://servi-fi-bucket.s3.eu-north-1.amazonaws.com/WhatsApp+Video+2024-09-24+at+12.24.01+PM.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>

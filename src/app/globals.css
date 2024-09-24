@@ -4,11 +4,12 @@
 
 @layer base {
   :root {
-    --background:  60 100% 95%; /* Light, warm background */
-    --foreground: 60 30% 20%;
-    --primary: 30 100% 50%; /* Bright orange */
-    --primary-foreground: 210 20% 98%;
-    --secondary: 130 60% 50%; /* Vibrant green */
+    --background: #A70075;
+ /* Light, warm background */
+--foreground: 60 30% 20%;
+--primary:#FFD700; /* Bright pink */ /* Updated with color #A70075 */
+--primary-foreground: 210 20% 98%;
+    --secondary:  #A70075; /* Vibrant green */
     --secondary-foreground: 210 20% 98%;
     --accent: 350 70% 50%; /* Bold red */
     --accent-foreground: 210 20% 98%;
@@ -21,7 +22,7 @@
   }
 
   .dark {
-    --background: 270 25% 12%; /* Deep dark purple */
+    --background: #A70075; /* Deep dark purple */
     --foreground: 45 100% 85%; /* Vibrant yellow for text */
     --card: 280 36% 20%; /* Dark, muted purple */
     --card-foreground: 45 100% 85%;
@@ -41,7 +42,7 @@
 }
 
 /* Adding the color-blinking animation */
-@keyframes colorBlink {
+/* @keyframes colorBlink {
   0% {
     color: var(--primary);
   }
@@ -57,7 +58,7 @@
   100% {
     color: var(--primary);
   }
-}
+} */
 
 /* Applying the animation to key elements */
 @layer base {
