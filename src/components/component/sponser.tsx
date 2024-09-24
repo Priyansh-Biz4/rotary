@@ -5,10 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const sponsors = [
-  { name: 'Sponsor 1', logo: '/s9.jpeg' },
-  { name: 'Sponsor 2', logo: '/img1.jpeg' },
-  { name: 'Sponsor 3', logo: '/img4.jpeg' },
-  { name: 'Sponsor 4', logo: '/img3.jpeg' },
+  { name: 'S9 Group', logo: '/s91.jpeg' },
+  { name: 'Brookland Group', logo: '/img1.jpeg' },
+  { name: 'Vaikunth Aditya', logo: '/img4.jpeg' },
+  { name: 'JK Lakshmi Cement', logo: '/img3.jpeg' },
 ];
 
 const SponsorCard = ({ name, logo }:any) => (
@@ -59,7 +59,7 @@ export default function SponsorsPage() {
             Join us in making a difference in our community. By becoming a sponsor, you'll support our initiatives and gain visibility among our members and the wider community.
           </p> */}
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link href="/contact" passHref>
+            <Link href="/" passHref>
               {/* <a className="inline-block bg-yellow-500 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out hover:bg-yellow-600"> */}
                 Contact Us to Become a Sponsor
               {/* </a> */}

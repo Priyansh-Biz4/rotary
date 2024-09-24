@@ -26,7 +26,7 @@ export default function GalleryPage() {
           transition={{ duration: 0.5 }}
           className="text-center space-y-4 mb-12"
         >
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900">Rotary Club of Palanpur Gallery</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900">Rotary Club of Palanpur Diamond City Gallery</h1>
           <p className="max-w-3xl mx-auto text-lg text-gray-600">
             Explore our collection of images that capture the spirit of our community and the impact of our projects.
           </p>

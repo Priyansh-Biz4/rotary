@@ -3,11 +3,19 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import IntroTimeoutModel from './intro-model';
 
  const images = [
     'home',
     'home2',
     'home3',
+    'img4',
+  ];
+
+  const sponserImages = [
+    's91',
+    'img1',
+    'img3',
     'img4',
   ];
 const CarouselComp = () => {
@@ -29,7 +37,7 @@ const CarouselComp = () => {
                             src={"/" + images[currentIndex] + ".jpeg"}
 
           alt={`Garba Event ${currentIndex + 1}`}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-fill"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -43,7 +51,7 @@ const CarouselComp = () => {
 const IntroModel = () => {
   return (
     <div className="p-6 text-center bg-white bg-opacity-90 rounded-lg shadow-lg">
-      <h2 className="text-3xl font-bold mb-4 text-orange-600 font-serif">Welcome to Rotary Club of Palanpur</h2>
+      <h2 className="text-3xl font-bold mb-4 text-orange-600 font-serif">Welcome to Rotary Club of Palanpur Diamond City</h2>
       <p className="text-pink-700 text-lg">
         Serving our community and celebrating our culture through Garba. Join us in our mission to create lasting change and preserve our traditions.
       </p>
@@ -67,13 +75,14 @@ export default function HomePage() {
     <div className="relative flex flex-col min-h-screen overflow-hidden bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100">
       <DecorativeBorder />
       <div className="absolute inset-0 overflow-hidden -z-10">
-        <video        
-          autoPlay
-          muted
+        <video
+        muted
+        
+        autoPlay
           className="w-full h-full object-cover opacity-20"
           loop
         >
-          <source src="https://servi-fi-bucket.s3.eu-north-1.amazonaws.com/WhatsApp+Video+2024-09-24+at+12.24.01+PM.mp4" type="video/mp4" />
+          <source src="https://biz4-chatbot-bucket.s3.eu-north-1.amazonaws.com/drone+01.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -84,7 +93,7 @@ export default function HomePage() {
         </div>
         
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-8 text-purple-700 font-serif">Upcoming Garba Events</h2>
+          <h2 className="text-3xl font-bold text-center mb-8 text-purple-700 font-serif">Upcoming Zanzar Garba Events</h2>
           <CarouselComp />
         </section>
 
@@ -113,18 +122,18 @@ export default function HomePage() {
               <div className="inline-block rounded-full bg-orange-500 px-3 py-1 text-sm text-white font-semibold">
                 Our Sponsers
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-purple-700 font-serif">Making a Difference Through Garba</h2>
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-purple-700 font-serif">Our Sponsors: Making a Difference Through Garba
+</h2>
               <p className="text-pink-700 text-lg">
-                The Rotary Club of Palanpur is committed to various community service projects. We combine our love for Garba with our dedication to social causes, creating events that not only celebrate our culture but also contribute to the betterment of our community.
-              </p>
+The Rotary Club of Palanpur Diamond City is thrilled to celebrate the vibrant spirit of Garba while creating a positive impact on our community! With the incredible support of our sponsors, we’re able to blend the joy of Navratri festivities with meaningful social causes.Their generosity allows us to host events that not only honor our rich culture but also uplift those in need. Together, we’re dancing our way to a better future—one Garba step at a time!</p>
             </div>
             <div className="grid grid-cols-2 gap-4">
-              {images.map((event) => (
+              {sponserImages.map((event) => (
                 <Image
                   key={event}
                   src={"/" + event + ".jpeg"}
-                  width={400}
-                  height={300}
+                  width={200}
+                  height={200}
                   alt={event}
                   className="rounded-lg object-cover shadow-lg"
                 />
@@ -133,6 +142,7 @@ export default function HomePage() {
           </div>
         </section>
       </main>
+      <IntroTimeoutModel />
     </div>
   );
 }

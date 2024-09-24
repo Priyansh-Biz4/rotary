@@ -3,7 +3,7 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import Image from "next/image";
 import React from "react";
 
-export default function IntroModel() {
+export default function IntroTimeoutModel() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -39,15 +39,6 @@ export default function IntroModel() {
                 className="rounded-lg animate-scale-up"
                 style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
               />
-              <div className="space-y-2 text-center">
-                <h6 className="text-2xl font-bold">
-🎟️✨ Get Ready for the Ultimate Garba Bash! 💃🕺
-               </h6>
-                <p className="text-muted-foreground">
-                  Grab your pass to the ultimate Garba night! Contact at +91 98798 75831 to secure yours before they’re gone!
-                  💃🔥{" "}
-                </p>
-              </div>
             </div>
           </div>
         </button>

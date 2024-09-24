@@ -20,11 +20,10 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <p className="text-lg text-orange-700">
-            Garba Celebrations is dedicated to preserving and promoting the rich cultural heritage of Gujarat through the art of Garba dance. Our organization brings together passionate dancers, musicians, and cultural enthusiasts to create unforgettable Garba experiences.
-          </p>
+About Rotary Club Palanpur Zanzar – Garba Event
+Welcome to Rotary Club Palampur Zanzar Garba Event! Join us for a night of vibrant dance, culture, and community spirit. The Rotary Club of Palanpur is proud to present Zanzar, a spectacular Garba celebration where tradition meets togetherness.          </p>
           <p className="text-lg text-orange-700">
-            Founded in 2010, we have been organizing Garba events, workshops, and performances for over a decade. Our mission is to share the joy of Garba with people from all walks of life, fostering a sense of community and cultural appreciation.
-          </p>
+Our mission is simple: to serve, unite, and uplift our community through cultural events that inspire joy and foster connection. As part of Rotary International, we embody the spirit of Service Above Self and strive to make a difference in the lives of those around us. Since 1977, we’ve spearheaded impactful projects, from healthcare initiatives like our Rotary Eye Hospital to hosting community drives like blood donation camps.</p>
           <h2 className="text-2xl font-semibold text-orange-800 mt-8 mb-4">Our Values</h2>
           <ul className="list-disc list-inside space-y-2 text-orange-700">
             <li>Preservation of Gujarati culture and traditions</li>

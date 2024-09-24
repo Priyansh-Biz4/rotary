@@ -1,14 +1,16 @@
+/* eslint-disable react/jsx-no-undef */
 "use client"
 import type { Metadata } from "next";
 import { Lora, Poppins } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link';
+import Image from 'next/image';
 
 const lora = Lora({ subsets: ["latin"], variable: '--font-lora' });
 const poppins = Poppins({ weight: ['400', '600', '700'], subsets: ["latin"], variable: '--font-poppins' });
 
  const metadata: Metadata = {
-  title: "Rotary Club of Palanpur - Garba Celebration",
+  title: "Rotary Club of Palanpur Diamond City - Garba Celebration",
   description: "Service Above Self - Rotary Club of Palanpur official website featuring Garba celebrations",
 };
 
@@ -24,21 +26,26 @@ export default function RootLayout({
 
         {/* Updated header with dark theme */}
         <header className="bg-gray-900 text-white shadow-md sticky top-0 z-50">
-          <nav className="container mx-auto px-4 py-4 flex flex-wrap justify-between items-center">
-            <Link href="/" className="text-2xl font-bold font-serif text-yellow-400 flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
-              </svg>
-              Rotary Club of Palanpur
-            </Link>
-            <ul className="flex flex-wrap space-x-4 mt-4 sm:mt-0">
-              <li><Link href="/" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Home</Link></li>
-              <li><Link href="/about-us" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">About Us</Link></li>
-              <li><Link href="/sponser" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Sponsers</Link></li>
-              <li><Link href="/gallery" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Gallery</Link></li>
-              <li><Link href="/members" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Members</Link></li>
-            </ul>
-          </nav>
+          <nav className="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
+  <Link href="/" className="text-2xl font-bold font-serif text-yellow-400 flex items-center justify-center mb-4 sm:mb-0">
+    <Image
+      src="/logo.jpg"
+      alt="Logo"
+      width={70}
+      height={70}
+      className="mr-2" // Optional spacing between image and text
+    />
+    Rotary Club of Palanpur
+  </Link>
+  <ul className="flex flex-wrap space-x-4 mt-4 sm:mt-0">
+    <li><Link href="/" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Home</Link></li>
+    <li><Link href="/about-us" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">About Us</Link></li>
+    <li><Link href="/sponser" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Sponsers</Link></li>
+    <li><Link href="/gallery" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Gallery</Link></li>
+    <li><Link href="/members" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Members</Link></li>
+  </ul>
+</nav>
+
         </header>
 
         <main className="flex-grow bg-gradient-to-r from-red-500 via-violet-600 to-indigo-600">
@@ -51,8 +58,9 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div>
                 <h3 className="text-xl font-bold mb-4 font-serif text-yellow-400">Contact Us</h3>
-                <p>Email: info@rotaryclubpalanpur.org</p>
-                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@zazarrotary.com</p>
+                <p>Phone: +91 94276 47003</p>
+                <p>Address: 31, Gam Kadva Patidar Samaj vadi , Nr. Sadhima Mandir, Gathaman road, Palanpur</p>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4 font-serif text-yellow-400">Quick Links</h3>
@@ -65,7 +73,7 @@ export default function RootLayout({
               <div>
                 <h3 className="text-xl font-bold mb-4 font-serif text-yellow-400">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <a href="#" className="hover:text-pink-400 transition-colors duration-300">
+                  <a href="https://www.facebook.com/profile.php?id=100095555551775" className="hover:text-pink-400 transition-colors duration-300">
                     <span className="sr-only">Facebook</span>
                     <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path fillRule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clipRule="evenodd" />
@@ -88,7 +96,7 @@ export default function RootLayout({
             </div>
           </div>
           <div className="text-center text-sm mt-8">
-            © 2024 Rotary Club of Palanpur. All rights reserved.
+            © 2024 Rotary Club of Palanpur Diamond City. All rights reserved.
           </div>
         </footer>
       </body>

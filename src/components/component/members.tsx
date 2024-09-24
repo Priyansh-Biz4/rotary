@@ -3,30 +3,80 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import Image from 'next/image';
-// import garbaEvent from '../public/image.png'; // Ensure the image is placed in the "public" folder for Next.js
 
 const topAuthority = [
-  { role: "President", name: "MPHF Rtn. Shailesh S. Patel" },
-  { role: "Secretary", name: "PHF Rtn. Dr. Jignesh Maheshwari" },
-  { role: "Club Trainer", name: "PHF Rtn. Ashok Modi" },
-  { role: "Imm Past President", name: "PHF Rtn. Mukesh Modh" },
-  { role: "President Elect (2025-26)", name: "PHF Rtn. Nilesh Pujara" },
-  { role: "President Nominee (2026-27)", name: "PHF Rtn. Akshay Panchal" },
-  { role: "Vice President", name: "MPHF Rtn. Shailesh S. Patel" },
-  { role: "Joint Secretary", name: "Rtn. Chetan Soni" },
-  { role: "Treasurer", name: "MPHF Rtn. Dr. Pinakin Patel" },
-  { role: "Sgt. at Arms", name: "PHF Rtn. Lalit Jadav" },
-  { role: "Board of Directors", name: "Multiple members" }, // List all
-  { role: "Bulletin Editor", name: "Rtn. Mahendra Gupta" }
+  { role: "President", name: "MPHF Rtn. Shailesh S. Patel", imgSrc: "s-patel.jpeg" },
+  { role: "Secretary", name: "PHF Rtn. Dr. Jignesh Maheshwari", imgSrc: "jignesh-mh.jpeg" },
+    { role: "Imm Past President", name: "PHF Rtn. Mukesh Modh", imgSrc: "m-modh.jpeg" },
+  { role: "Club Trainer", name: "PHF Rtn. Ashok Modi", imgSrc: "user.jpg" },
+  { role: "President Elect (2025-26)", name: "PHF Rtn. Nilesh Pujara", imgSrc: "user.jpg" },
+  { role: "President Nominee (2026-27)", name: "PHF Rtn. Akshay Panchal", imgSrc: "a-panchal.jpeg" },
+  { role: "Vice President", name: "MPHF Rtn. Shailesh S. Patel", imgSrc: "user.jpg" },
+  { role: "Joint Secretary", name: "Rtn. Chetan Soni", imgSrc: "user.jpg" },
+  { role: "Treasurer", name: "MPHF Rtn. Dr. Pinakin Patel", imgSrc: "pinakin.png" },
+  { role: "Sgt. at Arms", name: "PHF Rtn. Lalit Jadav", imgSrc: "user.jpg" },
+  { role: "Board of Directors", name: "Multiple members", imgSrc: "user.jpg" },
+  { role: "Bulletin Editor", name: "Rtn. Mahendra Gupta", imgSrc: "user.jpg" }
 ];
 
+
 const members = [
-  // Add all the member names in the list as in the image
-  "MPHF Rtn. Ajit D. Agrawal", "MPHF Rtn. Dr. Ramesh B. Patel", 
-  "MPHF Rtn. Dr. Shailesh V. Patel", "MPHF Rtn. Pinakin N. Patel", 
-  "MPHF Rtn. Nishant P. Nayak", "MPHF Rtn. Ashok P. Khandelwal", 
-  "MPHF Rtn. Mehul M. Soni", "PHF Rtn. Dr. Surekhaben K. Patel",
-  // Add other members similarly
+  { name: "Rtn. Shailesh Patel", imgSrc: "s-patel.jpeg" },
+  { name: "Rtn. Ashok Modi", imgSrc: "user.jpg" },
+  { name: "Rtn. Mukesh Modh", imgSrc: "m-modh.jpeg" },
+  { name: "Rtn. Nilesh Pujara", imgSrc: "user.jpg" },
+  { name: "Rtn. Akshay Panchal", imgSrc: "a-panchal.jpeg" },
+  { name: "Rtn. Dr. Shailesh Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Jignesh Maheshwari", imgSrc: "jignesh-mh.jpeg" },
+  { name: "Rtn. Chetan Soni", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Pinakin Patel", imgSrc: "pinakin.png" },
+  { name: "Rtn. Lalit Jadhav", imgSrc: "user.jpg" },
+  { name: "Rtn. Ajit Agrawal", imgSrc: "ajit.png" },
+  { name: "Rtn. Dr. Shodhan Sheth", imgSrc: "Shodhan.png" },
+  { name: "Rtn. Shubham Agrawal", imgSrc: "user.jpg" },
+  { name: "Rtn. Ashok Khandelwal", imgSrc: "user.jpg" },
+  { name: "Rtn. Sandip Patel", imgSrc: "Sandip.png" },
+  { name: "Rtn. Rahul Agrawal", imgSrc: "rahul.png" },
+  { name: "Rtn. Dhaval Gohil", imgSrc: "dhaval.png" },
+  { name: "Rtn. Manoj Joshi", imgSrc: "manoj.png" },
+  { name: "Rtn. Kamlesh Patni", imgSrc: "user.jpg" },
+  { name: "Rtn. Dinesh Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Mehul Soni", imgSrc: "user.jpg" },
+  { name: "Rtn. Mahendra Gupta", imgSrc: "user.jpg" },
+  { name: "Rtn. Bharat R. Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Bhupendra Suthar", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Bharat R. Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Nishant Nayak", imgSrc: "nishant-nayak.png" },
+  { name: "Rtn. Dr. Pravin B. Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Pravin G. Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Ramesh Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Sanjay Chaudhry", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Sanjay Dharani", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Surekha Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Hasmukh Modi", imgSrc: "user.jpg" },
+  { name: "Rtn. Hasmukh Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Jagdish Panchal", imgSrc: "user.jpg" },
+  { name: "Rtn. Kalpesh Modi", imgSrc: "kalpesh.png" },
+  { name: "Rtn. Nagesh Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Naresh Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Nikhil Modi", imgSrc: "user.jpg" },
+  { name: "Rtn. Pratik Agrawal", imgSrc: "user.jpg" },
+  { name: "Rtn. Pravin Parmar", imgSrc: "user.jpg" },
+  { name: "Rtn. Ronak Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Sanjay Gupta", imgSrc: "user.jpg" },
+  { name: "Rtn. Shailesh Chaudhary", imgSrc: "user.jpg" },
+  { name: "Rtn. Sunil Maheshwari", imgSrc: "sunil.png" },
+  { name: "Rtn. Dr. Manjula Parmar", imgSrc: "user.jpg" },
+  { name: "Rtn. Bharat H. Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Milit Rathi", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Arpit Agrawal", imgSrc: "user.jpg" },
+  { name: "Rtn. Kalpesh Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Satish Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Parth Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Bharat Shankhla", imgSrc: "user.jpg" },
+  { name: "Rtn. Pravin Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Jitendra Patel", imgSrc: "user.jpg" },
+  { name: "Rtn. Dr. Pavan Soni", imgSrc: "user.jpg" }
 ];
 
 export default function MembersPage() {
@@ -94,14 +144,23 @@ export default function MembersPage() {
             {topAuthority.map((person, index) => (
               <motion.div
                 key={index}
-                className="bg-white shadow-md rounded-lg p-6"
+                className="bg-white shadow-md rounded-lg p-6 flex items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {person.role}
-                </h3>
-                <p className="text-gray-600">{person.name}</p>
+                <Image
+                  src={"/" + person.imgSrc}// Image for top authority
+                  alt={person.name}
+                  width={80} // Adjust size as needed
+                  height={80}
+                  className="rounded-full mr-4" // Rounded image
+                />
+                <div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                    {person.role}
+                  </h3>
+                  <p className="text-gray-600">{person.name}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>
@@ -115,11 +174,18 @@ export default function MembersPage() {
             {members.map((member, index) => (
               <motion.div
                 key={index}
-                className="bg-white shadow-md rounded-lg p-6"
+                className="bg-white shadow-md rounded-lg p-6 flex items-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <p className="text-lg text-gray-800">{member}</p>
+                <Image
+                 src={"/" + member.imgSrc}// Image for members
+                  alt={member.name}
+                  width={80} // Adjust size as needed
+                  height={80}
+                  className="rounded-full mr-4" // Rounded image
+                />
+                <p className="text-lg text-gray-800">{member.name}</p>
               </motion.div>
             ))}
           </motion.div>

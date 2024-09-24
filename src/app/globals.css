@@ -6,9 +6,9 @@
   :root {
     --background: #A70075;
  /* Light, warm background */
---foreground: 60 30% 20%;
+--foreground:  #A70075;
 --primary:#FFD700; /* Bright pink */ /* Updated with color #A70075 */
---primary-foreground: 210 20% 98%;
+--primary-foreground:  #A70075;
     --secondary:  #A70075; /* Vibrant green */
     --secondary-foreground: 210 20% 98%;
     --accent: 350 70% 50%; /* Bold red */
@@ -85,4 +85,10 @@
     @apply text-accent hover:underline;
     animation: colorBlink 4s infinite;
   }
+}
+h3,h2{
+  color: #A70075;
+}
+p{
+  color: hsl(350 70% 50%);
 }
