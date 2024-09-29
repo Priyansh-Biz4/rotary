@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function About() {
   return (
-      <div className="container mx-auto px-4 py-8">
+      <div className="container mx-auto px-4 py-8 main-bg">    
         <motion.h1 
           className="text-3xl font-bold text-orange-800 mb-6"
           initial={{ opacity: 0, y: -20 }}

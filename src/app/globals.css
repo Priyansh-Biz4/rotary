@@ -92,3 +92,15 @@ h3,h2{
 p{
   color: hsl(350 70% 50%);
 }
+
+
+
+/* Example to check */
+* {
+  z-index: auto;
+}
+
+.main-bg {
+    background: radial-gradient(circle at top left, #FFDA44 0%, #FF6B6B 30%, #B06AB6 60%, #6A82FB 100%);
+    opacity: 0.9;
+}

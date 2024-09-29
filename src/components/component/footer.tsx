@@ -105,7 +105,7 @@ const Footer = () =>
             </div>
             <div className="space-y-4">
                 <h3 className="text-lg font-bold">Find Us</h3>
-                <Link href={"https://maps.app.goo.gl/zpQCKZ1k4TjLbRDU9"}>
+                <Link href={"https://maps.app.goo.gl/BGAagarHyt9te5G57"}>
                     <Image
                         src="/map.png"
                         width={600}

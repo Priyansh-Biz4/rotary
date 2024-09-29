@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import IntroTimeoutModel from './intro-model';
+import AchievementsPage from './AchievementsPage';
 
  const images = [
     'home',
@@ -28,6 +29,7 @@ const CarouselComp = () => {
     }, 5000);
     return () => clearInterval(timer);
   }, []);
+
 
   return (
     <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden">
@@ -71,20 +73,34 @@ const DecorativeBorder = () => (
 export default function HomePage() {
   const events = ['Garba Night', 'Dandiya Raas', 'Cultural Program', 'Charity Auction'];
 
+           const stats = [
+  { value: '1.2', label: 'million', description: 'members worldwide', color: 'text-teal-600' },
+  { value: '47', label: 'million', description: 'volunteer hours each year', color: 'text-purple-600' },
+  { value: '$291', label: 'million', description: 'funding awarded in 2023-24', color: 'text-orange-500' },
+];
+
+function StatsSection() {
+  return (
+    <section className="py-12 bg-gray-50">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center">
+        {stats.map((stat, index) => (
+          <div key={index} className="p-6 bg-white shadow-lg rounded-lg">
+            <h3 className={`text-4xl font-bold ${stat.color}`}>{stat.value}</h3>
+            <p className="text-xl font-semibold text-gray-800">{stat.label}</p>
+            <p className="mt-2 text-gray-600">{stat.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
   return (
     <div className="relative flex flex-col min-h-screen overflow-hidden bg-gradient-to-br from-orange-100 via-pink-100 to-purple-100">
       <DecorativeBorder />
       <div className="absolute inset-0 overflow-hidden -z-10">
-        <video
-        muted
-        
-        autoPlay
-          className="w-full h-full object-cover opacity-20"
-          loop
-        >
-          <source src="https://biz4-chatbot-bucket.s3.eu-north-1.amazonaws.com/drone+01.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {/* Background Color with Pattern Overlay */}
+        <div className="w-full h-full bg-[radial-gradient(circle_at_top_left,_#FFDA44_0%,_#FF6B6B_30%,_#B06AB6_60%,_#6A82FB_100%)] opacity-90"></div>
       </div>
 
       <main className="relative flex-1 z-10 container mx-auto px-4 py-8">
@@ -141,6 +157,11 @@ The Rotary Club of Palanpur Diamond City is thrilled to celebrate the vibrant sp
             </div>
           </div>
         </section>
+
+        {StatsSection()}
+
+
+
       </main>
       <IntroTimeoutModel />
     </div>

@@ -83,7 +83,7 @@ export default function MembersPage() {
   const [showTopAuthority, setShowTopAuthority] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-100 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 to-blue-100 p-8 main-bg">
       <div className="max-w-7xl mx-auto">
         {/* Image Section */}
         <motion.div
