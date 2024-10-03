@@ -135,9 +135,6 @@ function StatsSection() {
         <section className="mb-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <div className="inline-block rounded-full bg-orange-500 px-3 py-1 text-sm text-white font-semibold">
-                Our Sponsers
-              </div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl text-purple-700 font-serif">Our Sponsors: Making a Difference Through Garba
 </h2>
               <p className="text-pink-700 text-lg">

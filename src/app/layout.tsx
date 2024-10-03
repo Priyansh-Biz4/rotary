@@ -36,7 +36,7 @@ export default function RootLayout({
       height={70}
       className="mr-2" // Optional spacing between image and text
     />
-    Rotary Club of Palanpur
+    Rotary Club of Palanpur Diamond City
   </Link>
   <ul className="flex flex-wrap space-x-4 mt-4 sm:mt-0">
     <li><Link href="/" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Home</Link></li>
