@@ -13,7 +13,6 @@ const images = [
 ]
 
 export default function GalleryPage() {
-  const [selectedImage, setSelectedImage] = useState(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [userName, setUserName] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -28,7 +27,7 @@ export default function GalleryPage() {
     }
   }, [isModalOpen])
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault()
     if (userName && phoneNumber) {
       setShowScanLink(true)
@@ -86,7 +85,7 @@ export default function GalleryPage() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedImage(image)}
+              // onClick={() => setSelectedImage(image)}
               className="cursor-pointer overflow-hidden rounded-lg shadow-lg border-4 border-yellow-300"
             >
               <Image
