@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #A70075;
+ /* Light, warm background */
+--foreground:  #A70075;
+--primary:#FFD700; /* Bright pink */ /* Updated with color #A70075 */
+--primary-foreground:  #A70075;
+    --secondary:  #A70075; /* Vibrant green */
+    --secondary-foreground: 210 20% 98%;
+    --accent: 350 70% 50%; /* Bold red */
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: #A70075; /* Deep dark purple */
+    --foreground: 45 100% 85%; /* Vibrant yellow for text */
+    --card: 280 36% 20%; /* Dark, muted purple */
+    --card-foreground: 45 100% 85%;
+    --primary: 310 90% 45%; /* Bright pink */
+    --primary-foreground: 45 100% 85%;
+    --secondary: 220 90% 40%; /* Electric blue */
+    --secondary-foreground: 45 100% 85%;
+    --accent: 50 100% 55%; /* Bright golden yellow */
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 315 40% 30%;
+    --input: 315 40% 30%;
+    --ring: 50 100% 55%; /* Glowing yellow for rings and borders */
+    --radius: 0.5rem;
+  }
+}
+
+/* Adding the color-blinking animation */
+/* @keyframes colorBlink {
+  0% {
+    color: var(--primary);
+  }
+  25% {
+    color: var(--secondary);
+  }
+  50% {
+    color: var(--accent);
+  }
+  75% {
+    color: var(--destructive);
+  }
+  100% {
+    color: var(--primary);
+  }
+} */
+
+/* Applying the animation to key elements */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    animation: colorBlink 5s infinite;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-primary;
+    animation: colorBlink 3s infinite;
+  }
+
+  p {
+    @apply text-secondary;
+    animation: colorBlink 7s infinite;
+  }
+
+  a {
+    @apply text-accent hover:underline;
+    animation: colorBlink 4s infinite;
+  }
+}
+h3,h2{
+  color: #A70075;
+}
+p{
+  color: hsl(350 70% 50%);
+}
+
+
+
+/* Example to check */
+* {
+  z-index: auto;
+}
+
+.main-bg {
+    background: radial-gradient(circle at top left, #FFDA44 0%, #FF6B6B 30%, #B06AB6 60%, #6A82FB 100%);
+    opacity: 0.9;
+}
