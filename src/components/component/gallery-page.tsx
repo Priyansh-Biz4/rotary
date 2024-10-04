@@ -138,6 +138,7 @@ export default function GalleryPage() {
                   <label className="block text-white text-sm font-bold mb-2">Phone Number</label>
                   <input
                     type="tel"
+                     pattern="[0-9]{10}" 
                     value={phoneNumber}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-lg"
@@ -160,28 +161,17 @@ export default function GalleryPage() {
               >
                 &times;
               </button>
-
                 </>
                 :
-                    <><div className="mt-6 text-center">
+                    <div className="mt-6 text-center">
                     <motion.a
-                      href="https://play.google.com/store/apps/details?id=com.kwicpic&pcampaignid=web_share"
+                      href="https://kwikpic-in.app.link/e/dNPrb2XHqNb?uCode=DDLTTG"
                       className="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600 transition duration-200 blink-text"
                       animate={{ opacity: [1, 0.5, 1], transition: { repeat: Infinity, duration: 1 } }} // Blinking effect for link
                     >
-                      For android : Click here to scan your photos
+                      Click here to scan your photos
                     </motion.a>
-                  </div><div className="mt-6 text-center">
-                      <motion.a
-                        href="https://apps.apple.com/in/app/kwikpic-smart-photo-sharing/id1635944378"
-                        className="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600 transition duration-200 blink-text"
-                        animate={{ opacity: [1, 0.5, 1], transition: { repeat: Infinity, duration: 1 } }} // Blinking effect for link
-                      >
-                        For IOS : Click here to scan your photos
-                      </motion.a>
-                    </div></>
-
-                
+                  </div>
               }
             </motion.div>
           </motion.div>
