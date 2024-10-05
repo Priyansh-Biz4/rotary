@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion'
+import IntroTimeoutModel from './intro-model';
 
 const images = [
   { src: '/image1.jpg', title: 'Serene Landscape', description: 'A tranquil scene of rolling hills and a peaceful lake.' },
@@ -62,17 +63,67 @@ export default function GalleryPage() {
             Explore our collection of images that capture the spirit of our community and the impact of our projects.
           </p>
           {/* Blinking Button to open modal */}
-          <motion.button
-  onClick={() => setIsModalOpen(true)}
-  className="mt-8 px-8 py-4 bg-yellow-500 text-white font-bold rounded-lg shadow-lg transition duration-500 ease-in-out transform hover:scale-110 glow-button border-4 border-blue-400"
-  whileHover={{ scale: 1.1 }}
-  animate={{
-    scale: [1, 1.05, 1],
-    transition: { repeat: Infinity, duration: 1.5 }
-  }}
->
-  Click to scan your photos
-</motion.button>
+   <div className="mt-6 text-center" style={{      marginTop:"30px",
+}}>
+  <motion.a
+    href="https://kwikpic-in.app.link/e/dNPrb2XHqNb?uCode=DDLTTG"
+    className="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600 transition duration-200 blink-text"
+    animate={{ opacity: [1, 0.5, 1], transition: { repeat: Infinity, duration: 1 } }} // Blinking effect for link
+       style={{
+      padding: '16px',
+      backgroundColor: '#2d3748', // dark gray
+      borderRadius: '8px',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+      animation: 'highlight 2s infinite',
+      transition: 'transform 0.5s ease-in-out',
+    }}
+    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+    onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+  >
+    Click here to scan your photos
+  </motion.a>
+
+  {/* Photographer's Logo and Name */}
+  {/* <div
+    className="mt-4 flex justify-center items-center space-x-2"
+  >
+    <Image
+      src="/SAVE_20241003_211008.jpg"
+      alt="Photographer Logo"
+      width={200}
+      height={200}
+      className="rounded-full object-cover"
+    />
+    <p
+      style={{
+        color: '#f7fafc', // light gray
+        fontWeight: '600',
+        fontSize: '14px',
+      }}
+    >
+      Photography Managed By{' '}
+      <span style={{ color: '#d53f8c' }}>[Photographer Name]</span>
+    </p>
+  </div> */}
+
+  {/* Inline keyframe animation */}
+  <style jsx>{`
+    @keyframes highlight {
+      0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+      50% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+    }
+  `}</style>
+</div>
+
+
+
         </motion.div>
 
         {/* Grid of Images */}
@@ -120,50 +171,7 @@ export default function GalleryPage() {
               className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 rounded-lg max-w-3xl w-full relative border-4 border-yellow-500 shadow-lg" // Added background gradient color
             >
               {
-                !showScanLink ? <>
-                
-              <h2 className="text-3xl font-bold mb-6 text-center text-white">Enter your details</h2>
-              <form onSubmit={handleFormSubmit}>
-                <div className="mb-4">
-                  <label className="block text-white text-sm font-bold mb-2">Name</label>
-                  <input
-                    type="text"
-                    value={userName}
-                    onChange={(e) => setUserName(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded-lg"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-white text-sm font-bold mb-2">Phone Number</label>
-                  <input
-                    type="tel"
-                     pattern="[0-9]{10}" 
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    className="w-full p-2 border border-gray-300 rounded-lg"
-                    required
-                  />
-                </div>
-                <motion.button
-                  type="submit"
-                  className="w-full px-4 py-2 bg-green-500 text-white font-bold rounded-lg shadow-md hover:bg-green-600 transition duration-200 glow-button"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  Submit
-                </motion.button>
-              </form>
-
-
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 text-white font-bold text-2xl hover:text-gray-400"
-              >
-                &times;
-              </button>
-                </>
-                :
-                    <div className="mt-6 text-center">
+                 <div className="mt-6 text-center">
                     <motion.a
                       href="https://kwikpic-in.app.link/e/dNPrb2XHqNb?uCode=DDLTTG"
                       className="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600 transition duration-200 blink-text"
@@ -177,6 +185,7 @@ export default function GalleryPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      <IntroTimeoutModel img={"/photographer.jpg"}/>
     </div>
   )
 }

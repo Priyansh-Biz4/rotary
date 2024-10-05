@@ -3,7 +3,7 @@ import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import Image from "next/image";
 import React from "react";
 
-export default function IntroTimeoutModel() {
+export default function IntroTimeoutModel({img}:{img:string}) {
   const [isOpen, setIsOpen] = React.useState(false);
 
   React.useEffect(() => {
@@ -32,7 +32,7 @@ export default function IntroTimeoutModel() {
             </button>
             <div className="flex flex-col items-center justify-center gap-6">
               <Image
-                src="/card.jpeg"
+                src={img}
                 width={500}
                 height={500}
                 alt="Modal Image"
