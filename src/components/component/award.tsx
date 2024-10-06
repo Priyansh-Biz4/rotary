@@ -54,7 +54,36 @@ export default function AwardsPage() {
                 <td className="border px-4 py-2">Best Assistant Governor</td>
                 <td className="border px-4 py-2">Rtn. Manoj Joshi</td>
               </tr>
-              {/* Add the remaining rows similarly */}
+              <tr>
+                <td className="border px-4 py-2">4</td>
+                <td className="border px-4 py-2">Special Recognition</td>
+                <td className="border px-4 py-2">Rtn. Ajit Agrawal</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">5</td>
+                <td className="border px-4 py-2">Outstanding New Rotarian</td>
+                <td className="border px-4 py-2">Rtn. Dr. Jignesh Maheshwari</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">6</td>
+                <td className="border px-4 py-2">Appreciation Certificate</td>
+                <td className="border px-4 py-2">Rtn. Ajit Agrawal</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">7</td>
+                <td className="border px-4 py-2">Appreciation Certificate</td>
+                <td className="border px-4 py-2">Rtn. Dr. Shodhan Sheth</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">8</td>
+                <td className="border px-4 py-2">Appreciation Certificate</td>
+                <td className="border px-4 py-2">Rtn. Kalpesh Modi</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">9</td>
+                <td className="border px-4 py-2">Appreciation Certificate</td>
+                <td className="border px-4 py-2">Rtn. Spouse Amita Joshi</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -81,7 +110,26 @@ export default function AwardsPage() {
                 <td className="border px-4 py-2">3</td>
                 <td className="border px-4 py-2">Best Community Service</td>
               </tr>
-              {/* Add the remaining rows similarly */}
+              <tr>
+                <td className="border px-4 py-2">4</td>
+                <td className="border px-4 py-2">Best Public Image - Zanzar</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">5</td>
+                <td className="border px-4 py-2">Best Club Service</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">6</td>
+                <td className="border px-4 py-2">DG Citation</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">7</td>
+                <td className="border px-4 py-2">RI Citation</td>
+              </tr>
+              <tr>
+                <td className="border px-4 py-2">8</td>
+                <td className="border px-4 py-2">Best Membership Growth</td>
+              </tr>
             </tbody>
           </table>
         </div>
