@@ -45,6 +45,7 @@ export default function RootLayout({
     <li><Link href="/gallery" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Gallery</Link></li>
     <li><Link href="/members" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Members</Link></li>
     <li><Link href="/achievements" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Achievements</Link></li>
+    <li><Link href="/awards" className="text-yellow-400 hover:text-pink-400 transition-colors duration-300">Awards</Link></li>
 
   </ul>
 </nav>
