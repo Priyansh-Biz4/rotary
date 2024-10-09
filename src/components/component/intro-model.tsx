@@ -31,13 +31,14 @@ export default function IntroTimeoutModel({img}:{img:string}) {
               <XIcon className="w-4 h-4" />
             </button>
             <div className="flex flex-col items-center justify-center gap-6">
+            <h1>અમારી ચાલુ ઇવેન્ટમાં, સ્માર્ટ એન્ટ્રી, ચહેરાની ઓળખ અને સર્વી-ફાઇ ટેક દ્વારા સંચાલિત અમારી વેબસાઇટ સાથે સરળ ઍક્સેસનો આનંદ માણો!</h1>
               <Image
                 src={img}
                 width={500}
                 height={500}
                 alt="Modal Image"
                 className="rounded-lg animate-scale-up"
-                style={{ aspectRatio: "300 / 200", objectFit: "cover" }}
+                style={{ aspectRatio: "350 / 200", objectFit: "cover" }}
               />
             </div>
           </div>

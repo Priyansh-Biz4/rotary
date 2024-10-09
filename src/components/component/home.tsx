@@ -160,7 +160,7 @@ The Rotary Club of Palanpur Diamond City is thrilled to celebrate the vibrant sp
 
 
       </main>
-      <IntroTimeoutModel img={"/card.jpeg"}/>
+      <IntroTimeoutModel img={"/servifi.jpeg"}/>
     </div>
   );
 }

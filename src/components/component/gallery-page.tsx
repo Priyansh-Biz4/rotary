@@ -185,7 +185,7 @@ export default function GalleryPage() {
           </motion.div>
         )}
       </AnimatePresence>
-      <IntroTimeoutModel img={"/photographer.jpg"}/>
+      <IntroTimeoutModel img={"/servifi.jpeg"}/>
     </div>
   )
 }
