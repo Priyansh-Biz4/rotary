@@ -54,12 +54,36 @@ const IntroModel = () => {
   return (
     <div className="p-6 text-center bg-white bg-opacity-90 rounded-lg shadow-lg">
       <h2 className="text-3xl font-bold mb-4 text-orange-600 font-serif">Welcome to Rotary Club of Palanpur Diamond City</h2>
-      <p className="text-pink-700 text-lg">
-        Serving our community and celebrating our culture through Garba. Join us in our mission to create lasting change and preserve our traditions.
-      </p>
+      {/* <a
+    href="https://forms.gle/KqpbmZvKRjB5p8UW9"
+    style={{
+      animation: "blink 1s infinite",  // Apply the blink animation
+    }}
+  >
+    <h1 className="animate-pulse">💬 Give Feedback</h1>
+  </a> */}
+    <motion.a
+    href="https://forms.gle/KqpbmZvKRjB5p8UW9"
+    className="px-4 py-2 bg-blue-500 text-white font-bold rounded-lg shadow-md hover:bg-blue-600 transition duration-200 blink-text"
+    animate={{ opacity: [1, 0.5, 1], transition: { repeat: Infinity, duration: 1 } }} // Blinking effect for link
+       style={{
+      padding: '16px',
+      backgroundColor: '#2d3748', // dark gray,
+      marginTop:"20px",
+      borderRadius: '8px',
+      boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+      animation: 'highlight 2s infinite',
+      transition: 'transform 0.5s ease-in-out',
+    }}
+    onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.05)')}
+    onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+  >
+    Give Feedback
+  </motion.a>
     </div>
   );
 };
+
 
 const DecorativeBorder = () => (
   <div className="absolute inset-0 pointer-events-none">
